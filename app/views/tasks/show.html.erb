@@ -1,0 +1,13 @@
+<h1>Task = <%= @task.title %></h1>
+<%= link_to "Edit", edit_task_path(@task), class: "btn btn-secondary" %>
+<div class="container">
+  <div class="border border-secondary">
+    <%= @task.details %>
+  </div>
+  <div class="border border-danger">
+    <%= @task.completed %>
+  </div>
+  <%= link_to "DELETE!!", task_path(@task), class: "btn btn-danger",
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete task?" } %>
+  <%= link_to "All Tasks", tasks_path, class: "btn btn-success"  %>
+</div>
